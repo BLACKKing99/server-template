@@ -6,6 +6,7 @@ import { AuthModule } from './auth/auth.module'
 import { AuthService } from './auth/auth.service'
 import { PrismaController } from './prisma/prisma.controller'
 import { PrismaModule } from './prisma/prisma.module'
+import { UploadModule } from './upload/upload.module'
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { PrismaModule } from './prisma/prisma.module'
       isGlobal: true,
     }),
     JwtModule,
+    UploadModule,
   ],
   controllers: [AuthController, PrismaController],
   providers: [AuthService],
