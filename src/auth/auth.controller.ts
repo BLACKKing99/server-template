@@ -5,7 +5,7 @@ import LoginDto from 'src/dto/login.dto';
 import RegisterDto from 'src/dto/register.dto';
 import { AuthService } from './auth.service';
 
-@Controller('auth')
+@Controller()
 export class AuthController {
   // eslint-disable-next-line prettier/prettier
   constructor(private readonly authServeer: AuthService) {}
