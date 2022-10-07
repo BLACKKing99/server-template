@@ -1,4 +1,4 @@
-import { Body, Controller, Post, Req } from '@nestjs/common';
+import { Body, Controller, Post, Req, SerializeOptions } from '@nestjs/common';
 import { Request } from 'express';
 import { Auth } from 'src/decorator/auth.decorator';
 import LoginDto from 'src/dto/login.dto';
@@ -13,8 +13,11 @@ export class AuthController {
   register(@Body() data: RegisterDto) {
     return this.authServeer.register(data);
   }
-
   @Post('login')
+  // 暴露所有字段
+  @SerializeOptions({
+    strategy:'exposeAll'
+  })
   login(@Body() data:LoginDto){
     return this.authServeer.login(data)
   }
